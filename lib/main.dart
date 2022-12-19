@@ -16,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.blueAccent,
         leading: Icon(Icons.menu_outlined),
     //title: Center(child: Text('Counter')),
     actions: [
