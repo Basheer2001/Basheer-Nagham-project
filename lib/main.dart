@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'UorE.dart';
-import 'registeruser.dart';//3
+import 'registeruser.dart';
+
 void main() {
 
   runApp(MyApp());
