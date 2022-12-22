@@ -18,7 +18,7 @@ class _UorEState extends State<UorE> {
           children: [
             Container(
               width: double.infinity,
-              color: Colors.blueAccent,
+              color: Colors.blueAccent ,
               child: MaterialButton(
                 onPressed: (){
                   Navigator.push(
