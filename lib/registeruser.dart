@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
              onPressed: (){
              },
              child: Text(
-               'LOG IN',
+               'LOG IN' ,
                style: TextStyle(
                  color:   Colors.white,
                ),
