@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'UorE.dart';
-import 'registeruser.dart';
-
-
+import 'registeruser.dart';//3
 void main() {
+
   runApp(MyApp());
-
-
 }
 class MyApp extends StatelessWidget{
   @override
