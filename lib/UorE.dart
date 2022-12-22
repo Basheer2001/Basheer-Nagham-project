@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'expert1.dart';
 import 'first.dart';
 class UorE extends StatefulWidget {
   const UorE({Key? key}) : super(key: key);
@@ -43,7 +44,12 @@ class _UorEState extends State<UorE> {
               width: double.infinity,
               color: Colors.blueAccent,
               child: MaterialButton(
-                onPressed: (){
+                onPressed: (){ Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Profile(),
+                  ),
+                );
                 },
                 child: Text(
                   'EXPERT',
