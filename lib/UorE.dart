@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'expert1.dart';
+import 'ExpertProfile.dart';
 import 'first.dart';
 class UorE extends StatefulWidget {
   const UorE({Key? key}) : super(key: key);
@@ -47,7 +47,7 @@ class _UorEState extends State<UorE> {
                 onPressed: (){ Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Profile(),
+                    builder: (context) => ExpertProfile(),
                   ),
                 );
                 },
