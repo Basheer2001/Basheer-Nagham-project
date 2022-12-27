@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
              child: Text(
                'LOG IN' ,
                style: TextStyle(
-                 color:  Colors.white ,
+                 color:  Colors.white  ,
                ),
              ),
            ),
