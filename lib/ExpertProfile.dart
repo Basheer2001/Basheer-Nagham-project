@@ -9,9 +9,9 @@ _ProfileState createState() => _ProfileState();
 ////nn//////
 class _ProfileState extends State<ExpertProfile> {
   bool circular = false;
-  PickedFile? _imageFile;   // edits
+  PickedFile? _imageFile; // edits
   final ImagePicker _picker = ImagePicker();
-  String time ='Available Times';
+  String Days = 'Available Days ';
 
   @override
   Widget build(BuildContext context) {
@@ -21,109 +21,180 @@ class _ProfileState extends State<ExpertProfile> {
         title: Text('EXPERT'),
 
       ),
-      body :
+      body:
       Padding(
         padding: const EdgeInsets.all(20.0),
-        child : SingleChildScrollView(
+        child: SingleChildScrollView(
 
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              imageProfile(),
+              SizedBox(
+                height: 40.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                    labelText: 'Name',
+                    border: OutlineInputBorder(
+                    )
+                ),
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                    labelText: 'Email',
+                    border: OutlineInputBorder(
+                    )
+                ),
+              ),
+              SizedBox(
+                height: 30.0,
+              ),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    labelText: 'Password',
+                    border: OutlineInputBorder(
+                    )
+                ),
+                keyboardType: TextInputType.visiblePassword,
+              ),
 
-              mainAxisAlignment: MainAxisAlignment.center,
-              children:[
+              SizedBox(
+                height: 30.0,
+              ),
+              TextFormField(
+                obscureText: true,
+                decoration: InputDecoration(
+                    labelText: 'confirm Password',
+                    border: OutlineInputBorder(
+                    )
+                ),
+                keyboardType: TextInputType.visiblePassword,
+              ),
 
-                imageProfile(),
-                SizedBox(
-                  height: 40.0,
+              SizedBox(
+                height: 24,),
+              TextFormField(
+                decoration: InputDecoration(
+                    labelText: 'Experiences ',
+                    border: OutlineInputBorder(
+                    )
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Name ',
-                      border: OutlineInputBorder(
-                      )
-                  ),
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
+              TextFormField(
+                decoration: InputDecoration(
+                    labelText: 'Address',
+                    border: OutlineInputBorder(
+                    )
                 ),
-                SizedBox(
-                  height: 40.0,
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
+              TextFormField(
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                    labelText: 'Number',
+                    border: OutlineInputBorder(
+                    )
                 ),
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'Experiences ',
-                      border: OutlineInputBorder(
-                      )
-                  ),
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-                TextFormField(
-                  decoration: InputDecoration(
-                      labelText: 'communication',
-                      border: OutlineInputBorder(
-                      )
-                  ),
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-                Container(
-                  color: Colors.blueAccent,
-                  width: double.infinity,
-                  height: 40.0,
-                  child: PopupMenuButton(
-                    child: Center(child: Text('$time',
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
+              Container(
+                color: Colors.grey,
+                width: double.infinity,
+                height: 40.0,
+                child: PopupMenuButton(
+                    child: Center(child: Text('$Days',
                       style: TextStyle(
-                        color:   Colors.white,
+                        color: Colors.white,
                       ),
                     ),
                     ),
                     itemBuilder:
-                        (context){
+                        (context) {
                       return [
-                        PopupMenuItem<int>( value :0,child: Text('8AM-10AM')),
-                        PopupMenuItem<int>(value:1,child: Text('10AM-12PM')),
-                        PopupMenuItem<int>(value:2,child: Text('12PM-2PM')),
-                        PopupMenuItem<int>(value:3,child: Text('2PM-4PM')),
-                        PopupMenuItem<int>(value:4,child: Text('4PM-6PM')),
+                        PopupMenuItem<int>(value: 0, child: Text('Saturday')),
+                        PopupMenuItem<int>(value: 1, child: Text('Sunday')),
+                        PopupMenuItem<int>(value: 2, child: Text('Monday')),
+                        PopupMenuItem<int>(value: 3, child: Text('Tuesday')),
+                        PopupMenuItem<int>(value: 4, child: Text('Wednesday')),
+                        PopupMenuItem<int>(value: 5, child: Text('Thursday')),
                       ];
                     },
-                    onSelected: (value){
-                      if(value == 0){
+                    onSelected: (value) {
+                      if (value == 0) {
                         setState(() {
-                          time= '8AM-10AM';
-                          print(time);
+                          Days = 'Saturday';
+                          print(Days);
                         });
                       }
-                      if(value ==1){
+                      if (value == 1) {
                         setState(() {
-                          time= '10AM-12PM';
-                          print(time);
+                          Days = 'Sunday';
+                          print(Days);
                         });
                       }
-                      if(value == 2){
+                      if (value == 2) {
                         setState(() {
-                          time= '12PM-2PM';
-                          print(time);
+                          Days = 'Monday';
+                          print(Days);
                         });
                       }
-                      if(value == 3){
+                      if (value == 3) {
                         setState(() {
-                          time= '2PM-4PM';
-                          print(time);
+                          Days = 'Tuesday';
+                          print(Days);
                         });
                       }
-                      if(value == 4){
+                      if (value == 4) {
                         setState(() {
-                          time= '4PM-6PM';
-                          print(time);
+                          Days = 'Wednesday';
+                          print(Days);
                         });
-                      }
-                    },
+                        if (value == 5) {
+                          setState(() {
+                            Days = 'Wednesday';
+                            print(Days);
+                          });
+                        }
+                      };
+                    }
+                ),
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
+              Container(
+                width: double.infinity,
+                color: Colors.blueAccent,
+                child: MaterialButton(
+                  onPressed: (){
+                  },
+                  child: Text(
+                    'LOG IN' ,
+                    style: TextStyle(
+                      color:  Colors.white60  ,
+                    ),
                   ),
                 ),
-              ]
+              ),
+            ],
           ),
         ),
       ),
+    );
+
+
 
       //
     // body: Padding(
@@ -141,7 +212,7 @@ class _ProfileState extends State<ExpertProfile> {
     //         ],
     //       ),
     //     )
-    );
+
   }
 
   Widget imageProfile() {
