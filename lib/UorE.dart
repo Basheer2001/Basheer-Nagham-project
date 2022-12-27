@@ -1,3 +1,4 @@
+import 'package:dupro/loginexpert.dart';
 import 'package:flutter/material.dart';
 import 'ExpertProfile.dart';
 import 'first.dart';
@@ -47,7 +48,7 @@ class _UorEState extends State<UorE> {
                 onPressed: (){ Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ExpertProfile(),
+                    builder: (context) => loginexpert(),
                   ),
                 );
                 },

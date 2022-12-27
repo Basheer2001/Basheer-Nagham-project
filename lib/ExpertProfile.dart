@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'registeruser.dart';
-class ExpertProfile extends StatefulWidget {
+ class ExpertProfile extends StatefulWidget {
 @override
 _ProfileState createState() => _ProfileState();
 }

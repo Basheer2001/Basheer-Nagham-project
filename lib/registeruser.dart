@@ -46,19 +46,22 @@ class _HomeState extends State<Home> {
            ),
            keyboardType: TextInputType.visiblePassword,
          ),
+
          SizedBox(
            height: 30.0,
          ),
          TextFormField(
+           obscureText: true,
            decoration: InputDecoration(
-               labelText: 'Phone Number',
+               labelText: 'confirm Password',
                border: OutlineInputBorder(
                )
            ),
+           keyboardType: TextInputType.visiblePassword,
          ),
+
          SizedBox(
-           height: 30.0,
-         ),
+           height: 24,),
          Container(
            width: double.infinity,
            color: Colors.blueAccent,
