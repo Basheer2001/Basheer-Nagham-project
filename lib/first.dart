@@ -9,6 +9,7 @@ class MyApp extends StatefulWidget {
 }
 class _MyAppState extends State<MyApp> {
   Future loginuser(String email,String pass)async{
+    print("111");
 var response = await http.post(
   Uri.parse('http://192.168.143.182:8000/api/login'),
   body: <String,String>{
@@ -16,6 +17,8 @@ var response = await http.post(
     'password':pass
   }
 );
+print("response is ${response.body}");
+    print("response is ${response.statusCode}");
 if(response.statusCode==201)
    {
      var js=jsonDecode(response.body);
