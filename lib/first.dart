@@ -1,11 +1,37 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'registeruser.dart';
+import 'package:http/http.dart' as http;
 class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
 }
 class _MyAppState extends State<MyApp> {
+  Future loginuser(String email,String pass)async{
+var response = await http.post(
+  Uri.parse('http://192.168.143.182:8000/api/login'),
+  body: <String,String>{
+    'email':email,
+    'password':pass
+  }
+);
+if(response.statusCode==201)
+   {
+     var js=jsonDecode(response.body);
+     String token=js['7|wKDLDaz2Ug0AY2HF8WRBA6ru1XRssm1sX3f3f5wk'];
+     print('the token is $token');
+
+
+   }
+else
+  {
+print("sorry");
+   }
+  }
   var formkey= GlobalKey<FormState>();
+  var useremail=TextEditingController();
+  var userpassword=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +51,7 @@ class _MyAppState extends State<MyApp> {
                     height: 40,
                   ),
                   TextFormField(
+                    controller: useremail,
                     onChanged:(value){
                       print(value);
                     },
@@ -44,6 +71,7 @@ class _MyAppState extends State<MyApp> {
                   SizedBox(
                     height: 24,),
                   TextFormField(
+                    controller: userpassword,
                     obscureText: true,
                     onChanged: (value){
                       print(value);
@@ -86,8 +114,8 @@ class _MyAppState extends State<MyApp> {
                     child: MaterialButton(
                       onPressed: (){
                         if (formkey.currentState!.validate()){
-
                         }
+                        loginuser(useremail.text, userpassword.text);
                       },
                       child: Text(
                         'LOG IN',
