@@ -12,7 +12,7 @@ class _ProfileState extends State<ExpertProfile> {
   PickedFile? _imageFile; // edits
   final ImagePicker _picker = ImagePicker();
   String Days = 'Available Days ';
-
+  var formkey= GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,169 +26,217 @@ class _ProfileState extends State<ExpertProfile> {
         padding: const EdgeInsets.all(20.0),
         child: SingleChildScrollView(
 
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              imageProfile(),
-              SizedBox(
-                height: 40.0,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Name',
-                    border: OutlineInputBorder(
-                    )
+          child: Form(
+            key: formkey,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                imageProfile(),
+                SizedBox(
+                  height: 40.0,
                 ),
-              ),
-              SizedBox(
-                height: 20.0,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Email',
-                    border: OutlineInputBorder(
-                    )
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Name must not be embty ';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'Name',
+                      border: OutlineInputBorder(
+                      )
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 30.0,
-              ),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    labelText: 'Password',
-                    border: OutlineInputBorder(
-                    )
+                SizedBox(
+                  height: 20.0,
                 ),
-                keyboardType: TextInputType.visiblePassword,
-              ),
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Email must not be embty ';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'Email',
+                      border: OutlineInputBorder(
+                      )
+                  ),
+                ),
+                SizedBox(
+                  height: 30.0,
+                ),
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Password must not be embty ';
+                    }
+                    return null;
+                  },
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      labelText: 'Password',
+                      border: OutlineInputBorder(
+                      )
+                  ),
+                  keyboardType: TextInputType.visiblePassword,
+                ),
 
-              SizedBox(
-                height: 30.0,
-              ),
-              TextFormField(
-                obscureText: true,
-                decoration: InputDecoration(
-                    labelText: 'confirm Password',
-                    border: OutlineInputBorder(
-                    )
+                SizedBox(
+                  height: 30.0,
                 ),
-                keyboardType: TextInputType.visiblePassword,
-              ),
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'confirm Password must not be embty ';
+                    }
+                    return null;
+                  },
+                  obscureText: true,
+                  decoration: InputDecoration(
+                      labelText: 'confirm Password',
+                      border: OutlineInputBorder(
+                      )
+                  ),
+                  keyboardType: TextInputType.visiblePassword,
+                ),
 
-              SizedBox(
-                height: 24,),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Experiences ',
-                    border: OutlineInputBorder(
-                    )
+                SizedBox(
+                  height: 24,),
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Experiences must not be embty ';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'Experiences ',
+                      border: OutlineInputBorder(
+                      )
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Address',
-                    border: OutlineInputBorder(
-                    )
+                SizedBox(
+                  height: 40.0,
                 ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              TextFormField(
-                keyboardType: TextInputType.phone,
-                decoration: InputDecoration(
-                    labelText: 'Number',
-                    border: OutlineInputBorder(
-                    )
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Address must not be embty ';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'Address',
+                      border: OutlineInputBorder(
+                      )
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              Container(
-                color: Colors.grey,
-                width: double.infinity,
-                height: 40.0,
-                child: PopupMenuButton(
-                    child: Center(child: Text('$Days',
-                      style: TextStyle(
-                        color: Colors.white,
+                SizedBox(
+                  height: 40.0,
+                ),
+                TextFormField(
+                  validator: (value){
+                    if(value!.isEmpty){
+                      return 'Number must not be embty ';
+                    }
+                    return null;
+                  },
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                      labelText: 'Number',
+                      border: OutlineInputBorder(
+                      )
+                  ),
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+                Container(
+                  color: Colors.grey,
+                  width: double.infinity,
+                  height: 40.0,
+                  child: PopupMenuButton(
+                      child: Center(child: Text('$Days',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                    ),
-                    itemBuilder:
-                        (context) {
-                      return [
-                        PopupMenuItem<int>(value: 0, child: Text('Saturday')),
-                        PopupMenuItem<int>(value: 1, child: Text('Sunday')),
-                        PopupMenuItem<int>(value: 2, child: Text('Monday')),
-                        PopupMenuItem<int>(value: 3, child: Text('Tuesday')),
-                        PopupMenuItem<int>(value: 4, child: Text('Wednesday')),
-                        PopupMenuItem<int>(value: 5, child: Text('Thursday')),
-                      ];
-                    },
-                    onSelected: (value) {
-                      if (value == 0) {
-                        setState(() {
-                          Days = 'Saturday';
-                          print(Days);
-                        });
-                      }
-                      if (value == 1) {
-                        setState(() {
-                          Days = 'Sunday';
-                          print(Days);
-                        });
-                      }
-                      if (value == 2) {
-                        setState(() {
-                          Days = 'Monday';
-                          print(Days);
-                        });
-                      }
-                      if (value == 3) {
-                        setState(() {
-                          Days = 'Tuesday';
-                          print(Days);
-                        });
-                      }
-                      if (value == 4) {
-                        setState(() {
-                          Days = 'Wednesday';
-                          print(Days);
-                        });
-                        if (value == 5) {
+                      ),
+                      itemBuilder:
+                          (context) {
+                        return [
+                          PopupMenuItem<int>(value: 0, child: Text('Saturday')),
+                          PopupMenuItem<int>(value: 1, child: Text('Sunday')),
+                          PopupMenuItem<int>(value: 2, child: Text('Monday')),
+                          PopupMenuItem<int>(value: 3, child: Text('Tuesday')),
+                          PopupMenuItem<int>(value: 4, child: Text('Wednesday')),
+                          PopupMenuItem<int>(value: 5, child: Text('Thursday')),
+                        ];
+                      },
+                      onSelected: (value) {
+                        if (value == 0) {
+                          setState(() {
+                            Days = 'Saturday';
+                            print(Days);
+                          });
+                        }
+                        if (value == 1) {
+                          setState(() {
+                            Days = 'Sunday';
+                            print(Days);
+                          });
+                        }
+                        if (value == 2) {
+                          setState(() {
+                            Days = 'Monday';
+                            print(Days);
+                          });
+                        }
+                        if (value == 3) {
+                          setState(() {
+                            Days = 'Tuesday';
+                            print(Days);
+                          });
+                        }
+                        if (value == 4) {
                           setState(() {
                             Days = 'Wednesday';
                             print(Days);
                           });
-                        }
-                      };
-                    }
+                          if (value == 5) {
+                            setState(() {
+                              Days = 'Wednesday';
+                              print(Days);
+                            });
+                          }
+                        };
+                      }
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 40.0,
-              ),
-              Container(
-                width: double.infinity,
-                color: Colors.blueAccent,
-                child: MaterialButton(
-                  onPressed: (){
-                  },
-                  child: Text(
-                    'LOG IN' ,
-                    style: TextStyle(
-                      color:  Colors.white60  ,
+                SizedBox(
+                  height: 40.0,
+                ),
+                Container(
+                  width: double.infinity,
+                  color: Colors.blueAccent,
+                  child: MaterialButton(
+                    onPressed: (){
+                      if (formkey.currentState!.validate()){
+
+                      }
+                    },
+                    child: Text(
+                      'LOG IN' ,
+                      style: TextStyle(
+                        color:  Colors.white60  ,
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
