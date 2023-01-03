@@ -41,18 +41,18 @@ class _ProfileState extends State<ExpertProfile> {
                       return 'Name must not be embty ';
                     }
                     return null;
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Name',
-                      border: OutlineInputBorder(
-                      )
-                  ),
+                  },decoration: InputDecoration(
+                    labelText: 'Name',
+                    border: OutlineInputBorder(
+                    )
                 ),
-                SizedBox(
-                  height: 20.0,
+
                 ),
-                TextFormField(
-                  validator: (value){
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                validator: (value){
                     if(value!.isEmpty){
                       return 'Email must not be embty ';
                     }
