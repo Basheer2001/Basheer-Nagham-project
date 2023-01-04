@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'wallet.dart';
    class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
@@ -55,7 +56,7 @@ class _HomeState extends State<Home> {
            TextFormField(
              validator: (value){
                if(value!.isEmpty){
-                 return 'Passwor must not be embty ';
+                 return 'Password must not be embty ';
                }
                return null;
              },
@@ -67,7 +68,6 @@ class _HomeState extends State<Home> {
              ),
              keyboardType: TextInputType.visiblePassword,
            ),
-
            SizedBox(
              height: 30.0,
            ),
@@ -86,17 +86,22 @@ class _HomeState extends State<Home> {
              ),
              keyboardType: TextInputType.visiblePassword,
            ),
-
            SizedBox(
              height: 24,),
            Container(
              width: double.infinity,
              color: Colors.blueAccent,
              child: MaterialButton(
-               onPressed: (){
-    if (formkey.currentState!.validate()){
+               onPressed: () {
+                 if (formkey.currentState!.validate()) {
+                   Navigator.push(
+                     context,
+                     MaterialPageRoute(
+                       builder: (context) => wallet(),
 
-    }
+                     ),
+                   );
+                 }
                },
                child: Text(
                  'LOG IN' ,
