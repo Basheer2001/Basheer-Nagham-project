@@ -6,7 +6,7 @@ import 'registeruser.dart';
 @override
 _ProfileState createState() => _ProfileState();
 }
-////nn//////
+
 class _ProfileState extends State<ExpertProfile> {
   bool circular = false;
   PickedFile? _imageFile; // edits
@@ -41,18 +41,18 @@ class _ProfileState extends State<ExpertProfile> {
                       return 'Name must not be embty ';
                     }
                     return null;
-                  },
-                  decoration: InputDecoration(
-                      labelText: 'Name',
-                      border: OutlineInputBorder(
-                      )
-                  ),
+                  },decoration: InputDecoration(
+                    labelText: 'Name',
+                    border: OutlineInputBorder(
+                    )
                 ),
-                SizedBox(
-                  height: 20.0,
+
                 ),
-                TextFormField(
-                  validator: (value){
+              SizedBox(
+                height: 20.0,
+              ),
+              TextFormField(
+                validator: (value){
                     if(value!.isEmpty){
                       return 'Email must not be embty ';
                     }
@@ -339,3 +339,28 @@ void takePhoto(ImageSource source) async {
     _imageFile = pickedFile!;
   });
 } }
+//  Future loginuser(String email,String pass)async{
+//     print("111");
+// var response = await http.post(
+//   Uri.parse('http://192.168.43.192:8000/api/login'),
+//   body:<String,String>{
+//     'email':email,
+//     'password':pass,
+//   },
+//   headers: {"Accept":"application/json"}
+// );
+// print("response is ${response.body}");
+//     print("response is ${response.statusCode}");
+// if(response.statusCode==500)
+//    {
+//      var js=jsonDecode(response.body);
+//      var token=js["7|wKDLDaz2Ug0AY2HF8WRBA6ru1XRssm1sX3f3f5wk"];
+//      print('the token is $token');
+//
+//
+//    }
+// else
+//   {
+// print("sorry");
+//    }
+//   }
