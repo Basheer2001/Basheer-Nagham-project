@@ -1,7 +1,7 @@
 import 'package:dupro/loginexpert.dart';
 import 'package:flutter/material.dart';
 import 'ExpertProfile.dart';
-//import 'first.dart';
+import 'first.dart';
 class UorE extends StatefulWidget {
   const UorE({Key? key}) : super(key: key);
   @override
@@ -23,12 +23,12 @@ class _UorEState extends State<UorE> {
               color: Colors.blueAccent ,
               child: MaterialButton(
                 onPressed: (){
-               /*   Navigator.push(
+                 Navigator.push(
                       context,
                       MaterialPageRoute(
                       builder: (context) => MyApp(),
                   ),
-                  );*/
+                  );
                 },
                 child: Text(
                   'USER',
