@@ -1,9 +1,11 @@
-
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'main.dart';
 import 'registeruser.dart';
 import 'package:http/http.dart' as http;
+
+
 class MyApp extends StatefulWidget {
   @override
   State<MyApp> createState() => _MyAppState();
@@ -11,21 +13,27 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   Future loginuser(String email,String pass)async{
     print("111");
+
+    print("enaillllll$email");
     var response = await http.post(
-        Uri.parse('http://192.168.143.182:8000/api/login'),
-        body:jsonEncode({
+
+
+        Uri.parse('http://192.168.43.169:8000/api/login'),
+        body:<String,String>
+        {
           'email':email,
-          'password':pass,
-        }),
-        headers: {"Accept":"application/json"}
+          'password':pass
+        },
+        headers: {"Accept":"application/json",
+
+        }
     );
     print("response is ${response.body}");
     print("response is ${response.statusCode}");
     if(response.statusCode==201)
     {
       var js=jsonDecode(response.body);
-      String token=js['7|wKDLDaz2Ug0AY2HF8WRBA6ru1XRssm1sX3f3f5wk'];
-      print('the token is $token');
+      Token=js['token'];
 
 
     }
