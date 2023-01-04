@@ -339,3 +339,28 @@ void takePhoto(ImageSource source) async {
     _imageFile = pickedFile!;
   });
 } }
+//  Future loginuser(String email,String pass)async{
+//     print("111");
+// var response = await http.post(
+//   Uri.parse('http://192.168.43.192:8000/api/login'),
+//   body:<String,String>{
+//     'email':email,
+//     'password':pass,
+//   },
+//   headers: {"Accept":"application/json"}
+// );
+// print("response is ${response.body}");
+//     print("response is ${response.statusCode}");
+// if(response.statusCode==500)
+//    {
+//      var js=jsonDecode(response.body);
+//      var token=js["7|wKDLDaz2Ug0AY2HF8WRBA6ru1XRssm1sX3f3f5wk"];
+//      print('the token is $token');
+//
+//
+//    }
+// else
+//   {
+// print("sorry");
+//    }
+//   }
