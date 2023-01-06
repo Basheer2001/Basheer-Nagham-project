@@ -20,6 +20,26 @@ class _UorEState extends State<UorE> {
         title: Text(
             '1'.tr,
         ),
+        actions: [
+          PopupMenuButton(
+              icon: Icon(Icons.language),
+              itemBuilder:
+                  (context) {
+                return [
+                  PopupMenuItem<int>(value: 0, child: Text('العربية')),
+                  PopupMenuItem<int>(value: 1, child: Text('English')),
+                ];
+              },
+              onSelected: (value) {
+                if (value == 0) {
+                  controllerLang.changLang('ar');
+                }
+                if (value == 1) {
+                  controllerLang.changLang('en');
+                }
+              }
+          ),
+        ],
       ),
       body:
       Padding(
