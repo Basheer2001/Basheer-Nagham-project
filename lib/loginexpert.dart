@@ -1,5 +1,7 @@
 import 'package:dupro/ExpertProfile.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'logout.dart';
 class loginexpert extends StatefulWidget {
   const loginexpert({Key? key}) : super(key: key);
 
@@ -12,9 +14,10 @@ class _loginexpertState extends State<loginexpert> {
   @override
     Widget build(BuildContext context) {
       return Scaffold(
+          drawer: logout(),
           appBar: AppBar(
             backgroundColor: Colors.blue,
-            title: Text('LOG IN'),
+            title: Text('12'.tr),
           ),
           body: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -33,14 +36,14 @@ class _loginexpertState extends State<loginexpert> {
                       },
                       validator: (value){
                         if(value!.isEmpty){
-                          return 'Email must not be embty ';
+                          return '18'.tr;
                         }
                         return null;
                       },
                       keyboardType: TextInputType.emailAddress,
                       decoration:InputDecoration(
                         prefixIcon: Icon(Icons.email),
-                        labelText: 'Email',
+                        labelText: '13'.tr,
                         border: OutlineInputBorder(),
                       ) ,
                     ),
@@ -53,7 +56,7 @@ class _loginexpertState extends State<loginexpert> {
                       },
                       validator: (value){
                         if(value!.isEmpty){
-                          return 'Password must not be embty ';
+                          return '19 '.tr;
                         }
                         return null;
                       },
@@ -61,7 +64,7 @@ class _loginexpertState extends State<loginexpert> {
                       decoration:InputDecoration(
                         prefixIcon: Icon(Icons.lock),
                         suffix: Icon(Icons.remove_red_eye),
-                        labelText: 'password',
+                        labelText: '14'.tr,
                         border: OutlineInputBorder(),
                       ) ,
                     ),
@@ -70,7 +73,7 @@ class _loginexpertState extends State<loginexpert> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('log in'),
+                        Text('15'.tr),
                         TextButton(onPressed:(){
                           Navigator.push(
                             context,
@@ -78,7 +81,7 @@ class _loginexpertState extends State<loginexpert> {
                               builder: (context) => ExpertProfile(),
                             ),
                           );
-                        } ,child: Text('register'),
+                        } ,child: Text('16'.tr),
                         ),
                       ],
                     ),
@@ -92,7 +95,7 @@ class _loginexpertState extends State<loginexpert> {
                           }
                         },
                         child: Text(
-                          'LOG IN',
+                          '17'.tr,
                           style: TextStyle(
                             color:   Colors.white,
                           ),

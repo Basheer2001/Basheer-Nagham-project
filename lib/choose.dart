@@ -1,5 +1,6 @@
 import 'package:dupro/listview.dart';
 import 'package:flutter/material.dart';
+import 'logout.dart';
 class choose extends StatefulWidget {
   const choose({Key? key}) : super(key: key);
 
@@ -11,6 +12,7 @@ class _chooseState extends State<choose> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        drawer: logout(),
         body:
         Padding(
           padding: const EdgeInsets.all(20.0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'choose.dart';
+import 'logout.dart';
 class wallet extends StatefulWidget {
   const wallet({Key? key}) : super(key: key);
 
@@ -12,6 +13,7 @@ class _walletState extends State<wallet> {
   var formkey= GlobalKey<FormState>();
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: logout(),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         ),

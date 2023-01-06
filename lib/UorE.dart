@@ -62,6 +62,7 @@ class _UorEState extends State<UorE> {
                 child: Text(
                   '2'.tr,
                   style: TextStyle(
+
                     color:   Colors.white,
                   ),
                 ),
@@ -89,7 +90,7 @@ class _UorEState extends State<UorE> {
                 ),
               ),
             ),
-            SizedBox(
+         /*   SizedBox(
               height: 30.0,
             ),
             Container(
@@ -124,7 +125,7 @@ class _UorEState extends State<UorE> {
                   ),
                 ),
               ),
-            ),
+            ),*/
           ],
     ),
       )

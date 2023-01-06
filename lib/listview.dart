@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'logout.dart';
 class listview extends StatefulWidget {
   const listview({Key? key}) : super(key: key);
 
@@ -10,6 +11,7 @@ class _listviewState extends State<listview> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: logout(),
       appBar: AppBar(
         backgroundColor: Colors.blue,
       ),

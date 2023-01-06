@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'wallet.dart';
+import 'logout.dart';
    class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();

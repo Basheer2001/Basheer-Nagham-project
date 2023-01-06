@@ -1,8 +1,11 @@
 import 'dart:convert';
-
+import 'logout.dart';
 import 'package:flutter/material.dart';
 import 'main.dart';
 import 'registeruser.dart';
+import 'local/localControler.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -48,9 +51,12 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: logout(),
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('LOG IN'),
+          title: Text(
+              '4'.tr,
+          ),
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -70,14 +76,14 @@ class _MyAppState extends State<MyApp> {
                     },
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Email must not be embty ';
+                        return '10'.tr;
                       }
                       return null;
                     },
                     keyboardType: TextInputType.emailAddress,
                     decoration:InputDecoration(
                       prefixIcon: Icon(Icons.email),
-                      labelText: 'Email',
+                      labelText: '5'.tr,
                       border: OutlineInputBorder(),
                     ) ,
                   ),
@@ -91,7 +97,7 @@ class _MyAppState extends State<MyApp> {
                     },
                     validator: (value){
                       if(value!.isEmpty){
-                        return 'Password must not be embty ';
+                        return '11'.tr;
                       }
                       return null;
                     },
@@ -99,7 +105,7 @@ class _MyAppState extends State<MyApp> {
                     decoration:InputDecoration(
                       prefixIcon: Icon(Icons.lock),
                       suffix: Icon(Icons.remove_red_eye),
-                      labelText: 'password',
+                      labelText: '6'.tr,
                       border: OutlineInputBorder(),
                     ) ,
                   ),
@@ -108,7 +114,7 @@ class _MyAppState extends State<MyApp> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('log in'),
+                      Text('7'.tr,),
                       TextButton(onPressed:() {
                         Navigator.push(
                           context,
@@ -117,7 +123,7 @@ class _MyAppState extends State<MyApp> {
                           ),
                         );
                       },
-                        child: Text('register'),
+                        child: Text('8'.tr,),
                       ),
                     ],
                   ),
@@ -131,7 +137,7 @@ class _MyAppState extends State<MyApp> {
                         loginuser(useremail.text, userpassword.text);
                       },
                       child: Text(
-                        'LOG IN',
+                        '9'.tr,
                         style: TextStyle(
                           color:   Colors.white,
                         ),

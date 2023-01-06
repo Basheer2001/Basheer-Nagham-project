@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'registeruser.dart';
+import 'logout.dart';
  class ExpertProfile extends StatefulWidget {
 @override
 _ProfileState createState() => _ProfileState();
@@ -16,6 +17,7 @@ class _ProfileState extends State<ExpertProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: logout(),
       appBar: AppBar(
         backgroundColor: Colors.blue,
         title: Text('EXPERT'),
