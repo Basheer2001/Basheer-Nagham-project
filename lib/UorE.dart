@@ -1,7 +1,10 @@
 import 'package:dupro/loginexpert.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'ExpertProfile.dart';
 import 'first.dart';
+import 'local/localControler.dart';
 class UorE extends StatefulWidget {
   const UorE({Key? key}) : super(key: key);
   @override
@@ -11,7 +14,13 @@ class UorE extends StatefulWidget {
 class _UorEState extends State<UorE> {
   @override
   Widget build(BuildContext context) {
+    MyLocaleController controllerLang = Get.find();
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+            '1'.tr,
+        ),
+      ),
       body:
       Padding(
         padding: const EdgeInsets.all(20.0),
@@ -31,7 +40,7 @@ class _UorEState extends State<UorE> {
                   );
                 },
                 child: Text(
-                  'USER',
+                  '2'.tr,
                   style: TextStyle(
                     color:   Colors.white,
                   ),
@@ -53,7 +62,43 @@ class _UorEState extends State<UorE> {
                 );
                 },
                 child: Text(
-                  'EXPERT',
+                  '3'.tr,
+                  style: TextStyle(
+                    color:   Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Container(
+              width: double.infinity,
+              color: Colors.blueAccent,
+              child: MaterialButton(
+                onPressed: (){
+                  controllerLang.changLang('ar');
+                },
+                child: Text(
+                  'Arabic',
+                  style: TextStyle(
+                    color:   Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 30.0,
+            ),
+            Container(
+              width: double.infinity,
+              color: Colors.blueAccent,
+              child: MaterialButton(
+                onPressed: (){
+                  controllerLang.changLang('en');
+                },
+                child: Text(
+                  'English',
                   style: TextStyle(
                     color:   Colors.white,
                   ),
