@@ -18,7 +18,7 @@ class _MyAppState extends State<MyApp> {
     var response = await http.post(
 
 
-        Uri.parse('http://192.168.43.169:8000/api/login'),
+        Uri.parse('http://192.168.145.182:8000/api/login'),
         body:<String,String>
         {
           'email':email,

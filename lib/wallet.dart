@@ -14,7 +14,7 @@ class _walletState extends State<wallet> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('Please Enter Money to Pay'),),
+        ),
     body: Padding(
     padding: const EdgeInsets.all(20.0),
     child: SingleChildScrollView (
@@ -29,14 +29,14 @@ class _walletState extends State<wallet> {
       TextFormField(
         validator: (value){
           if(value!.isEmpty){
-            return 'Please You Must To Pay To Continue  ';
+            return 'Please You Must To Write To Continue  ';
           }
           return null;
         },
       keyboardType: TextInputType.phone,
       decoration:InputDecoration(
       prefixIcon: Icon(Icons.monetization_on),
-      labelText: 'Pay ',
+      labelText: 'Balance ',
       border: OutlineInputBorder(),
       ) ,
         ),
