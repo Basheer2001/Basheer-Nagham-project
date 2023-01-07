@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'registeruser.dart';
 import 'logout.dart';
@@ -12,7 +13,7 @@ class _ProfileState extends State<ExpertProfile> {
   bool circular = false;
   PickedFile? _imageFile; // edits
   final ImagePicker _picker = ImagePicker();
-  String Days = 'Available Days ';
+  String Days = '39'.tr;
   var formkey= GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class _ProfileState extends State<ExpertProfile> {
       drawer: logout(),
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text('EXPERT'),
+        title: Text('41'.tr),
 
       ),
       body:
@@ -44,7 +45,7 @@ class _ProfileState extends State<ExpertProfile> {
                     }
                     return null;
                   },decoration: InputDecoration(
-                    labelText: 'Name',
+                    labelText: '32'.tr,
                     border: OutlineInputBorder(
                     )
                 ),
@@ -61,7 +62,7 @@ class _ProfileState extends State<ExpertProfile> {
                     return null;
                   },
                   decoration: InputDecoration(
-                      labelText: 'Email',
+                      labelText: '33'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -78,7 +79,7 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'Password',
+                      labelText: '34'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -97,7 +98,7 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   obscureText: true,
                   decoration: InputDecoration(
-                      labelText: 'confirm Password',
+                      labelText: '35'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -114,7 +115,7 @@ class _ProfileState extends State<ExpertProfile> {
                     return null;
                   },
                   decoration: InputDecoration(
-                      labelText: 'Experiences ',
+                      labelText: '36'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -130,7 +131,7 @@ class _ProfileState extends State<ExpertProfile> {
                     return null;
                   },
                   decoration: InputDecoration(
-                      labelText: 'Address',
+                      labelText: '37'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -147,7 +148,7 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
-                      labelText: 'Number',
+                      labelText: '38'.tr,
                       border: OutlineInputBorder(
                       )
                   ),
@@ -169,47 +170,47 @@ class _ProfileState extends State<ExpertProfile> {
                       itemBuilder:
                           (context) {
                         return [
-                          PopupMenuItem<int>(value: 0, child: Text('Saturday')),
-                          PopupMenuItem<int>(value: 1, child: Text('Sunday')),
-                          PopupMenuItem<int>(value: 2, child: Text('Monday')),
-                          PopupMenuItem<int>(value: 3, child: Text('Tuesday')),
-                          PopupMenuItem<int>(value: 4, child: Text('Wednesday')),
-                          PopupMenuItem<int>(value: 5, child: Text('Thursday')),
+                          PopupMenuItem<int>(value: 0, child: Text('42'.tr)),
+                          PopupMenuItem<int>(value: 1, child: Text('43'.tr)),
+                          PopupMenuItem<int>(value: 2, child: Text('44'.tr)),
+                          PopupMenuItem<int>(value: 3, child: Text('45'.tr)),
+                          PopupMenuItem<int>(value: 4, child: Text('46'.tr)),
+                          PopupMenuItem<int>(value: 5, child: Text('47'.tr)),
                         ];
                       },
                       onSelected: (value) {
                         if (value == 0) {
                           setState(() {
-                            Days = 'Saturday';
+                            Days = '42'.tr;
                             print(Days);
                           });
                         }
                         if (value == 1) {
                           setState(() {
-                            Days = 'Sunday';
+                            Days = '43'.tr;
                             print(Days);
                           });
                         }
                         if (value == 2) {
                           setState(() {
-                            Days = 'Monday';
+                            Days = '44'.tr;
                             print(Days);
                           });
                         }
                         if (value == 3) {
                           setState(() {
-                            Days = 'Tuesday';
+                            Days = '45'.tr;
                             print(Days);
                           });
                         }
                         if (value == 4) {
                           setState(() {
-                            Days = 'Wednesday';
+                            Days = '46'.tr;
                             print(Days);
                           });
                           if (value == 5) {
                             setState(() {
-                              Days = 'Wednesday';
+                              Days = '47'.tr;
                               print(Days);
                             });
                           }
@@ -230,7 +231,7 @@ class _ProfileState extends State<ExpertProfile> {
                       }
                     },
                     child: Text(
-                      'LOG IN' ,
+                      '40'.tr ,
                       style: TextStyle(
                         color:  Colors.white60  ,
                       ),
@@ -319,14 +320,17 @@ Widget bottomSheet() {
             onPressed: () {
               takePhoto(ImageSource.camera);
             },
-            label: Text("Camera"),
+            label: Text('50'.tr),
+          ),
+          SizedBox(
+            width: 40.0,
           ),
           ElevatedButton.icon(
             icon: Icon(Icons.image),
             onPressed: () {
               takePhoto(ImageSource.gallery);
             },
-            label: Text("Gallery"),
+            label: Text('49'.tr),
           ),
         ])
       ],
