@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'wallet.dart';
 import 'logout.dart';
    class Home extends StatefulWidget {
@@ -10,9 +11,10 @@ class _HomeState extends State<Home> {
   @override
   Widget build (BuildContext context) {
     return Scaffold(
+        drawer: logout(),
         appBar: AppBar(
           backgroundColor: Colors.blue,
-          title: Text('USER'),
+          title: Text('21'.tr),
         ),
     body : Padding(
       padding: const EdgeInsets.all(20.0),
@@ -25,12 +27,12 @@ class _HomeState extends State<Home> {
       TextFormField(
         validator: (value){
           if(value!.isEmpty){
-            return 'Name must not be embty ';
+            return '24'.tr;
           }
           return null;
         },
           decoration: InputDecoration(
-            labelText: 'Name',
+            labelText: '23'.tr,
             border: OutlineInputBorder(
             )
           ),
@@ -41,12 +43,12 @@ class _HomeState extends State<Home> {
            TextFormField(
              validator: (value){
                if(value!.isEmpty){
-                 return 'Email must not be embty ';
+                 return '26'.tr;
                }
                return null;
              },
              decoration: InputDecoration(
-                 labelText: 'Email',
+                 labelText: '25'.tr,
                  border: OutlineInputBorder(
                  )
              ),
@@ -57,13 +59,13 @@ class _HomeState extends State<Home> {
            TextFormField(
              validator: (value){
                if(value!.isEmpty){
-                 return 'Password must not be embty ';
+                 return '28'.tr;
                }
                return null;
              },
              obscureText: true,
              decoration: InputDecoration(
-                 labelText: 'Password',
+                 labelText: '27'.tr,
                  border: OutlineInputBorder(
                  )
              ),
@@ -75,13 +77,13 @@ class _HomeState extends State<Home> {
            TextFormField(
              validator: (value){
                if(value!.isEmpty){
-                 return 'confirm Password must not be embty ';
+                 return '30'.tr;
                }
                return null;
              },
              obscureText: true,
              decoration: InputDecoration(
-                 labelText: 'confirm Password',
+                 labelText: '29'.tr,
                  border: OutlineInputBorder(
                  )
              ),
@@ -105,7 +107,7 @@ class _HomeState extends State<Home> {
                  }
                },
                child: Text(
-                 'LOG IN' ,
+                 '31'.tr ,
                  style: TextStyle(
                    color:  Colors.white60  ,
                  ),

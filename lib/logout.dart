@@ -15,9 +15,6 @@ class _logoutState extends State<logout> {
       child: ListView(
         padding: EdgeInsets.all(20.0),
         children: [
-          AppBar(
-            backgroundColor: Colors.blue,
-          ),
           SizedBox(
             height: 30.0,
           ),
