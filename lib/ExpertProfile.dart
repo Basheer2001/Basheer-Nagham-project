@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 import 'registeruser.dart';
+import 'dart:convert';
 import 'logout.dart';
+
+import 'package:http/http.dart' as http;
  class ExpertProfile extends StatefulWidget {
 @override
 _ProfileState createState() => _ProfileState();
@@ -15,6 +18,45 @@ class _ProfileState extends State<ExpertProfile> {
   final ImagePicker _picker = ImagePicker();
   String Days = '39'.tr;
   var formkey= GlobalKey<FormState>();
+  var expertname=TextEditingController();
+  var expertemail=TextEditingController();
+  var expertpassword=TextEditingController();
+  var expertconfirmpassword=TextEditingController();
+  var experiences=TextEditingController();
+  var address=TextEditingController();
+  var number=TextEditingController();
+
+  Future registerexpert(String name, String email,String pass,String conpass,String exp,String add,String num,File image)async{
+    var headers = {
+      'Accept': 'application/json'
+    };
+    var request = http.Request('POST', Uri.parse('http://192.168.43.169:8000/api/registerExpert'));
+    request.bodyFields = {
+      'name':name,
+      'email':email,
+      'password':pass,
+      'password_confirmation':conpass,
+      'experiences':exp,
+      'address':add,
+      'number':num,
+
+
+    };
+    request.headers.addAll(headers);
+    // request.files.add(await http.MultipartFile.fromPath('image', image.path));
+
+    http.StreamedResponse response = await request.send();
+
+    if (response.statusCode == 200) {
+      print(await response.stream.bytesToString());
+    }
+    else {
+      print(response.reasonPhrase);
+    }
+
+  }
+  File? image;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +81,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: expertname,
                   validator: (value){
                     if(value!.isEmpty){
                       return '24'.tr;
@@ -55,6 +98,7 @@ class _ProfileState extends State<ExpertProfile> {
                 height: 20.0,
               ),
               TextFormField(
+                controller: expertemail,
                 validator: (value){
                     if(value!.isEmpty){
                       return '26'.tr;
@@ -71,6 +115,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: expertpassword,
                   validator: (value){
                     if(value!.isEmpty){
                       return '28'.tr;
@@ -90,6 +135,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 30.0,
                 ),
                 TextFormField(
+                  controller: expertconfirmpassword,
                   validator: (value){
                     if(value!.isEmpty){
                       return '30'.tr;
@@ -108,6 +154,7 @@ class _ProfileState extends State<ExpertProfile> {
                 SizedBox(
                   height: 24,),
                 TextFormField(
+                  controller: experiences,
                   validator: (value){
                     if(value!.isEmpty){
                       return '52'.tr;
@@ -124,6 +171,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: address,
                   validator: (value){
                     if(value!.isEmpty){
                       return '53'.tr;
@@ -140,6 +188,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 40.0,
                 ),
                 TextFormField(
+                  controller: number,
                   validator: (value){
                     if(value!.isEmpty){
                       return '54'.tr;
@@ -229,6 +278,7 @@ class _ProfileState extends State<ExpertProfile> {
                       if (formkey.currentState!.validate()){
 
                       }
+                      registerexpert(expertname.text, expertemail.text,expertpassword.text,expertconfirmpassword.text,experiences.text,address.text,number.text,image!);
                     },
                     child: Text(
                       '40'.tr ,
