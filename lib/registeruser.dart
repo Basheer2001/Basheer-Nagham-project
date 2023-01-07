@@ -2,12 +2,50 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'wallet.dart';
 import 'logout.dart';
+import 'main.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
    class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
 class _HomeState extends State<Home> {
+  Future registeruser(String name,String email,String pass,String conpass)async{
+    print("111");
+
+    print("enaillllll$email");
+    var response = await http.post(
+        Uri.parse('http://192.168.43.169:8000/api/register'),
+        body:<String,String>
+        {
+          'name':name,
+          'email':email,
+          'password':pass,
+          'password_confirmation':conpass
+        },
+        headers: {"Accept":"application/json",
+
+        }
+    );
+    print("response is ${response.body}");
+    print("response is ${response.statusCode}");
+    if(response.statusCode==201)
+    {
+      var js=jsonDecode(response.body);
+      Token=js['token'];
+
+
+    }
+    else
+    {
+      print("sorry");
+    }
+  }
   var formkey= GlobalKey<FormState>();
+  var username=TextEditingController();
+  var useremail=TextEditingController();
+  var userpassword=TextEditingController();
+  var  userconfirmpassord=TextEditingController();
   @override
   Widget build (BuildContext context) {
     return Scaffold(
@@ -25,6 +63,7 @@ class _HomeState extends State<Home> {
      mainAxisAlignment: MainAxisAlignment.center,
          children:[
       TextFormField(
+        controller: username,
         validator: (value){
           if(value!.isEmpty){
             return '24'.tr;
@@ -32,6 +71,7 @@ class _HomeState extends State<Home> {
           return null;
         },
           decoration: InputDecoration(
+
             labelText: '23'.tr,
             border: OutlineInputBorder(
             )
@@ -41,6 +81,7 @@ class _HomeState extends State<Home> {
              height: 20.0,
            ),
            TextFormField(
+             controller: useremail,
              validator: (value){
                if(value!.isEmpty){
                  return '26'.tr;
@@ -48,6 +89,7 @@ class _HomeState extends State<Home> {
                return null;
              },
              decoration: InputDecoration(
+
                  labelText: '25'.tr,
                  border: OutlineInputBorder(
                  )
@@ -57,6 +99,7 @@ class _HomeState extends State<Home> {
              height: 30.0,
            ),
            TextFormField(
+             controller: userpassword,
              validator: (value){
                if(value!.isEmpty){
                  return '28'.tr;
@@ -65,6 +108,7 @@ class _HomeState extends State<Home> {
              },
              obscureText: true,
              decoration: InputDecoration(
+
                  labelText: '27'.tr,
                  border: OutlineInputBorder(
                  )
@@ -75,6 +119,7 @@ class _HomeState extends State<Home> {
              height: 30.0,
            ),
            TextFormField(
+             controller: userconfirmpassord,
              validator: (value){
                if(value!.isEmpty){
                  return '30'.tr;
@@ -83,6 +128,7 @@ class _HomeState extends State<Home> {
              },
              obscureText: true,
              decoration: InputDecoration(
+
                  labelText: '29'.tr,
                  border: OutlineInputBorder(
                  )
@@ -97,6 +143,7 @@ class _HomeState extends State<Home> {
              child: MaterialButton(
                onPressed: () {
                  if (formkey.currentState!.validate()) {
+                   registeruser(username.text,useremail.text,userpassword.text,userconfirmpassord.text);
                    Navigator.push(
                      context,
                      MaterialPageRoute(

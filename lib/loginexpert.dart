@@ -2,6 +2,10 @@ import 'package:dupro/ExpertProfile.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'logout.dart';
+import 'main.dart';
+import 'dart:convert';
+import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 class loginexpert extends StatefulWidget {
   const loginexpert({Key? key}) : super(key: key);
 
@@ -10,7 +14,38 @@ class loginexpert extends StatefulWidget {
 }
 
 class _loginexpertState extends State<loginexpert> {
+  Future loginexpert(String email,String pass)async{
+    print("111");
+
+    print("enaillllll$email");
+    var response = await http.post(
+        Uri.parse('http://192.168.43.169:8000/api/loginExpert'),
+        body:<String,String>
+        {
+          'email':email,
+          'password':pass
+        },
+        headers: {"Accept":"application/json",
+
+        }
+    );
+    print("response is ${response.body}");
+    print("response is ${response.statusCode}");
+    if(response.statusCode==201)
+    {
+      var js=jsonDecode(response.body);
+      Token=js['token'];
+
+
+    }
+    else
+    {
+      print("sorry");
+    }
+  }
   var formkey= GlobalKey<FormState>();
+  var expertemail=TextEditingController();
+  var expertpassword=TextEditingController();
   @override
     Widget build(BuildContext context) {
       return Scaffold(
@@ -31,6 +66,7 @@ class _loginexpertState extends State<loginexpert> {
                       height: 40,
                     ),
                     TextFormField(
+                      controller: expertemail,
                       onChanged:(value){
                         print(value);
                       },
@@ -50,6 +86,7 @@ class _loginexpertState extends State<loginexpert> {
                     SizedBox(
                       height: 24,),
                     TextFormField(
+                      controller: expertpassword,
                       obscureText: true,
                       onChanged: (value){
                         print(value);
@@ -91,7 +128,7 @@ class _loginexpertState extends State<loginexpert> {
                       child: MaterialButton(
                         onPressed: (){
                           if (formkey.currentState!.validate()){
-
+                            loginexpert(expertemail.text, expertpassword.text);
                           }
                         },
                         child: Text(
