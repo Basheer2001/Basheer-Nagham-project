@@ -41,7 +41,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Name must not be embty ';
+                      return '24'.tr;
                     }
                     return null;
                   },decoration: InputDecoration(
@@ -57,7 +57,7 @@ class _ProfileState extends State<ExpertProfile> {
               TextFormField(
                 validator: (value){
                     if(value!.isEmpty){
-                      return 'Email must not be embty ';
+                      return '26'.tr;
                     }
                     return null;
                   },
@@ -73,7 +73,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Password must not be embty ';
+                      return '28'.tr;
                     }
                     return null;
                   },
@@ -92,7 +92,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'confirm Password must not be embty ';
+                      return '30'.tr;
                     }
                     return null;
                   },
@@ -110,7 +110,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Experiences must not be embty ';
+                      return '52'.tr;
                     }
                     return null;
                   },
@@ -126,7 +126,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Address must not be embty ';
+                      return '53'.tr;
                     }
                     return null;
                   },
@@ -142,7 +142,7 @@ class _ProfileState extends State<ExpertProfile> {
                 TextFormField(
                   validator: (value){
                     if(value!.isEmpty){
-                      return 'Number must not be embty ';
+                      return '54'.tr;
                     }
                     return null;
                   },
@@ -303,37 +303,39 @@ Widget bottomSheet() {
       horizontal: 20,
       vertical: 20,
     ),
-    child: Column(
-      children: <Widget>[
-        Text(
-          "Choose Profile photo",
-          style: TextStyle(
-            fontSize: 20.0,
-          ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-          ElevatedButton.icon(
-            icon: Icon(Icons.camera),
-            onPressed: () {
-              takePhoto(ImageSource.camera);
-            },
-            label: Text('50'.tr),
+    child: SingleChildScrollView(
+      child: Column(
+        children: <Widget>[
+          Text(
+            '51'.tr,
+            style: TextStyle(
+              fontSize: 20.0,
+            ),
           ),
           SizedBox(
-            width: 40.0,
+            height: 20,
           ),
-          ElevatedButton.icon(
-            icon: Icon(Icons.image),
-            onPressed: () {
-              takePhoto(ImageSource.gallery);
-            },
-            label: Text('49'.tr),
-          ),
-        ])
-      ],
+          Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            ElevatedButton.icon(
+              icon: Icon(Icons.camera),
+              onPressed: () {
+                takePhoto(ImageSource.camera);
+              },
+              label: Text('50'.tr),
+            ),
+            SizedBox(
+              width: 40.0,
+            ),
+            ElevatedButton.icon(
+              icon: Icon(Icons.image),
+              onPressed: () {
+                takePhoto(ImageSource.gallery);
+              },
+              label: Text('49'.tr),
+            ),
+          ])
+        ],
+      ),
     ),
   );
 }
