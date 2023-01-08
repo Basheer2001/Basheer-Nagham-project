@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'UorE.dart';
 import 'local/localControler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
+import 'experts.dart';
 String Token='';
 void main()  {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +21,7 @@ late Locale l;
       locale: Locale('en') ,
       translations: myLocal(),
       debugShowCheckedModeBanner: false ,
-        home:UorE());
+        home:experts());
 
   }
 

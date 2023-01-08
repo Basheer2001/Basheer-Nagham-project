@@ -23,6 +23,7 @@ class _HomeState extends State<Home> {
           'password':pass,
           'password_confirmation':conpass
         },
+
         headers: {"Accept":"application/json",
 
         }
