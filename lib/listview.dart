@@ -18,75 +18,77 @@ class _listviewState extends State<listview> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 20,
-              ),
-              TextFormField(
-                cursorColor: Colors.purple,
-                onChanged: (value) {
-                  print(value);
-                },
-                decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search,color: Colors.purple,),
-                  labelText: '57'.tr,
-                  labelStyle: new TextStyle(
-                      color: Colors.purple
+        child: SingleChildScrollView(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                TextFormField(
+                  cursorColor: Colors.purple,
+                  onChanged: (value) {
+                    print(value);
+                  },
+                  decoration: InputDecoration(
+                    prefixIcon: Icon(Icons.search,color: Colors.purple,),
+                    labelText: '57'.tr,
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
+                ),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('58'.tr,
+                  style:
+                  TextStyle(
+                    fontSize: 20.0,
                   ),
-                  focusedBorder: UnderlineInputBorder(
-                    borderSide: BorderSide(color: Colors.purple),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('59'.tr,
+                  style:
+                  TextStyle(
+                    fontSize: 20.0,
                   ),
-              ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('58'.tr,
-                style:
-                TextStyle(
-                  fontSize: 20.0,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('59'.tr,
-                style:
-                TextStyle(
-                  fontSize: 20.0,
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('60'.tr,
-                style:
-                TextStyle(
-                  fontSize: 20.0,
+                Text('60'.tr,
+                  style:
+                  TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('61'.tr,
-                style:
-                TextStyle(
-                  fontSize: 20.0,
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Text('62'.tr ,
-                style:
-                TextStyle(
-                  fontSize: 20.0,
+                Text('61'.tr,
+                  style:
+                  TextStyle(
+                    fontSize: 20.0,
+                  ),
                 ),
-              ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text('62'.tr ,
+                  style:
+                  TextStyle(
+                    fontSize: 20.0,
+                  ),
+                ),
 
-            ]
+              ]
+          ),
         ),
       ),
     );
