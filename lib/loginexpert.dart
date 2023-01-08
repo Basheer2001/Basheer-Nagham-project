@@ -51,7 +51,7 @@ class _loginexpertState extends State<loginexpert> {
       return Scaffold(
           drawer: logout(),
           appBar: AppBar(
-            backgroundColor: Colors.blue,
+            backgroundColor: Colors.purple,
             title: Text('12'.tr),
           ),
           body: Padding(
@@ -66,6 +66,7 @@ class _loginexpertState extends State<loginexpert> {
                       height: 40,
                     ),
                     TextFormField(
+                      cursorColor: Colors.purple,
                       controller: expertemail,
                       onChanged:(value){
                         print(value);
@@ -78,14 +79,21 @@ class _loginexpertState extends State<loginexpert> {
                       },
                       keyboardType: TextInputType.emailAddress,
                       decoration:InputDecoration(
-                        prefixIcon: Icon(Icons.email),
+                        prefixIcon: Icon(Icons.email,color: Colors.purple,),
                         labelText: '13'.tr,
-                        border: OutlineInputBorder(),
-                      ) ,
+                        labelStyle: new TextStyle(
+                            color: Colors.purple
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.purple),
+                        ),
+                    ),
                     ),
                     SizedBox(
-                      height: 24,),
+                      height: 24,
+                    ),
                     TextFormField(
+                      cursorColor: Colors.purple,
                       controller: expertpassword,
                       obscureText: true,
                       onChanged: (value){
@@ -99,18 +107,25 @@ class _loginexpertState extends State<loginexpert> {
                       },
                       keyboardType: TextInputType.visiblePassword,
                       decoration:InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: Icon(Icons.lock,color: Colors.purple,),
                         suffix: Icon(Icons.remove_red_eye),
                         labelText: '14'.tr,
-                        border: OutlineInputBorder(),
-                      ) ,
+                        labelStyle: new TextStyle(
+                            color: Colors.purple
+                        ),
+                        focusedBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.purple),
+                        ),
+                    ),
                     ),
                     SizedBox(
                       height: 24,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('15'.tr),
+                        Text('15'.tr,
+
+                        ),
                         TextButton(onPressed:(){
                           Navigator.push(
                             context,
@@ -118,13 +133,17 @@ class _loginexpertState extends State<loginexpert> {
                               builder: (context) => ExpertProfile(),
                             ),
                           );
-                        } ,child: Text('16'.tr),
+                        } ,child: Text('16'.tr,
+                          style: TextStyle(
+                              color: Colors.purple
+
+                          ),),
                         ),
                       ],
                     ),
                     Container(
                       width: double.infinity,
-                      color: Colors.blueAccent,
+                      color: Colors.purple,
                       child: MaterialButton(
                         onPressed: (){
                           if (formkey.currentState!.validate()){

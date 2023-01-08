@@ -19,7 +19,7 @@ class _logoutState extends State<logout> {
             height: 30.0,
           ),
           ListTile(
-            leading: Icon(Icons.logout),
+            leading: Icon(Icons.logout,color: Colors.purple,),
             title: Text('20'.tr),
             onTap: () => print('log out'),
           ),

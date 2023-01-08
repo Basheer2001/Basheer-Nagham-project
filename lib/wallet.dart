@@ -15,7 +15,7 @@ class _walletState extends State<wallet> {
     return Scaffold(
       drawer: logout(),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple,
         ),
     body: Padding(
     padding: const EdgeInsets.all(20.0),
@@ -37,9 +37,14 @@ class _walletState extends State<wallet> {
         },
       keyboardType: TextInputType.phone,
       decoration:InputDecoration(
-      prefixIcon: Icon(Icons.monetization_on),
+      prefixIcon: Icon(Icons.monetization_on,color: Colors.purple,),
       labelText: 'Balance ',
-      border: OutlineInputBorder(),
+        labelStyle: new TextStyle(
+            color: Colors.purple
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(color: Colors.purple),
+        ),
       ) ,
         ),
         SizedBox(
@@ -47,7 +52,7 @@ class _walletState extends State<wallet> {
         ),
         Container(
           width: double.infinity,
-          color: Colors.blueAccent,
+          color: Colors.purple,
           child: MaterialButton(
             onPressed: (){
                 if (formkey.currentState!.validate()){

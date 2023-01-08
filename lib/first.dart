@@ -7,6 +7,7 @@ import 'local/localControler.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'dart:convert';
+import 'choose.dart';
 import 'package:http/http.dart' as http;
 
 
@@ -36,6 +37,12 @@ class _MyAppState extends State<MyApp> {
     {
       var js=jsonDecode(response.body);
       Token=js['token'];
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => choose(),
+        ),
+      );
 
 
     }
@@ -52,7 +59,7 @@ class _MyAppState extends State<MyApp> {
     return Scaffold(
       drawer: logout(),
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.purple,
           title: Text(
               '4'.tr,
           ),
@@ -69,6 +76,7 @@ class _MyAppState extends State<MyApp> {
                     height: 40,
                   ),
                   TextFormField(
+                    cursorColor: Colors.purple,
                     controller: useremail,
                     onChanged:(value){
                       print(value);
@@ -80,15 +88,23 @@ class _MyAppState extends State<MyApp> {
                       return null;
                     },
                     keyboardType: TextInputType.emailAddress,
+
                     decoration:InputDecoration(
-                      prefixIcon: Icon(Icons.email),
+                      prefixIcon: Icon(Icons.email,color: Colors.purple,),
                       labelText: '5'.tr,
-                      border: OutlineInputBorder(),
+                      labelStyle: new TextStyle(
+                        color: Colors.purple
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                      ),
+
                     ) ,
                   ),
                   SizedBox(
                     height: 24,),
                   TextFormField(
+                    cursorColor: Colors.purple,
                     controller: userpassword,
                     obscureText: true,
                     onChanged: (value){
@@ -102,10 +118,15 @@ class _MyAppState extends State<MyApp> {
                     },
                     keyboardType: TextInputType.visiblePassword,
                     decoration:InputDecoration(
-                      prefixIcon: Icon(Icons.lock),
+                      prefixIcon: Icon(Icons.lock,color: Colors.purple,),
                       suffix: Icon(Icons.remove_red_eye),
                       labelText: '6'.tr,
-                      border: OutlineInputBorder(),
+                      labelStyle: new TextStyle(
+                          color: Colors.purple
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.purple),
+                      ),
                     ) ,
                   ),
                   SizedBox(
@@ -122,13 +143,16 @@ class _MyAppState extends State<MyApp> {
                           ),
                         );
                       },
-                        child: Text('8'.tr,),
+                        child: Text('8'.tr,
+                        style: TextStyle(
+                          color: Colors.purple,
+                        ),),
                       ),
                     ],
                   ),
                   Container(
                     width: double.infinity,
-                    color: Colors.blueAccent,
+                    color: Colors.purple,
                     child: MaterialButton(
                       onPressed: (){
                         if (formkey.currentState!.validate()){

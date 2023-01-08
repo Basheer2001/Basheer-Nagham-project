@@ -17,6 +17,7 @@ class _UorEState extends State<UorE> {
     MyLocaleController controllerLang = Get.find();
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.purple,
         title: Text(
             '1'.tr,
         ),
@@ -49,7 +50,7 @@ class _UorEState extends State<UorE> {
           children: [
             Container(
               width: double.infinity,
-              color: Colors.blueAccent ,
+              color: Colors.purple,
               child: MaterialButton(
                 onPressed: (){
                  Navigator.push(
@@ -73,7 +74,7 @@ class _UorEState extends State<UorE> {
             ),
             Container(
               width: double.infinity,
-              color: Colors.blueAccent,
+              color: Colors.purple,
               child: MaterialButton(
                 onPressed: (){ Navigator.push(
                   context,

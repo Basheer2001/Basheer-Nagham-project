@@ -1,5 +1,6 @@
 import 'package:dupro/listview.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'logout.dart';
 class choose extends StatefulWidget {
   const choose({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class _chooseState extends State<choose> {
             children: [
               Container(
                 width: double.infinity,
-                color: Colors.blueAccent ,
+                color: Colors.purple ,
                 child: MaterialButton(
                   onPressed: (){
                     Navigator.push(
@@ -33,7 +34,7 @@ class _chooseState extends State<choose> {
 
                   },
                   child: Text(
-                    'EXPERIANCES',
+                    '55'.tr,
                     style: TextStyle(
                       color:   Colors.white,
                     ),
@@ -45,13 +46,13 @@ class _chooseState extends State<choose> {
               ),
               Container(
                 width: double.infinity,
-                color: Colors.blueAccent,
+                color: Colors.purple,
                 child: MaterialButton(
                   onPressed: (){
 
                   },
                   child: Text(
-                    'EXPERTS',
+                    '56'.tr,
                     style: TextStyle(
                       color:   Colors.white,
                     ),

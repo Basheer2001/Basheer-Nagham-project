@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
         drawer: logout(),
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          backgroundColor: Colors.purple,
           title: Text('21'.tr),
         ),
     body : Padding(
@@ -63,6 +63,7 @@ class _HomeState extends State<Home> {
      mainAxisAlignment: MainAxisAlignment.center,
          children:[
       TextFormField(
+        cursorColor: Colors.purple,
         controller: username,
         validator: (value){
           if(value!.isEmpty){
@@ -73,14 +74,19 @@ class _HomeState extends State<Home> {
           decoration: InputDecoration(
 
             labelText: '23'.tr,
-            border: OutlineInputBorder(
-            )
+            labelStyle: new TextStyle(
+                color: Colors.purple
+            ),
+            focusedBorder: UnderlineInputBorder(
+              borderSide: BorderSide(color: Colors.purple),
+            ),
           ),
       ),
            SizedBox(
              height: 20.0,
            ),
            TextFormField(
+             cursorColor: Colors.purple,
              controller: useremail,
              validator: (value){
                if(value!.isEmpty){
@@ -91,14 +97,19 @@ class _HomeState extends State<Home> {
              decoration: InputDecoration(
 
                  labelText: '25'.tr,
-                 border: OutlineInputBorder(
-                 )
+               labelStyle: new TextStyle(
+                   color: Colors.purple
+               ),
+               focusedBorder: UnderlineInputBorder(
+                 borderSide: BorderSide(color: Colors.purple),
+               ),
              ),
            ),
            SizedBox(
              height: 30.0,
            ),
            TextFormField(
+             cursorColor: Colors.purple,
              controller: userpassword,
              validator: (value){
                if(value!.isEmpty){
@@ -110,8 +121,12 @@ class _HomeState extends State<Home> {
              decoration: InputDecoration(
 
                  labelText: '27'.tr,
-                 border: OutlineInputBorder(
-                 )
+               labelStyle: new TextStyle(
+                   color: Colors.purple
+               ),
+               focusedBorder: UnderlineInputBorder(
+                 borderSide: BorderSide(color: Colors.purple),
+               ),
              ),
              keyboardType: TextInputType.visiblePassword,
            ),
@@ -119,6 +134,7 @@ class _HomeState extends State<Home> {
              height: 30.0,
            ),
            TextFormField(
+             cursorColor: Colors.purple,
              controller: userconfirmpassord,
              validator: (value){
                if(value!.isEmpty){
@@ -130,8 +146,12 @@ class _HomeState extends State<Home> {
              decoration: InputDecoration(
 
                  labelText: '29'.tr,
-                 border: OutlineInputBorder(
-                 )
+               labelStyle: new TextStyle(
+                   color: Colors.purple
+               ),
+               focusedBorder: UnderlineInputBorder(
+                 borderSide: BorderSide(color: Colors.purple),
+               ),
              ),
              keyboardType: TextInputType.visiblePassword,
            ),
@@ -139,7 +159,7 @@ class _HomeState extends State<Home> {
              height: 24,),
            Container(
              width: double.infinity,
-             color: Colors.blueAccent,
+             color: Colors.purple,
              child: MaterialButton(
                onPressed: () {
                  if (formkey.currentState!.validate()) {

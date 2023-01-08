@@ -15,14 +15,14 @@ class _searshState extends State<searsh> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple,
         title: Text('Rating'),
       ),
       body: Center(
 
         child: RatingBar.builder(
           minRating: 1,
-            itemBuilder: (context, _)=> Icon(Icons.star,color:Colors.blue),
+            itemBuilder: (context, _)=> Icon(Icons.star,color:Colors.purple),
       onRatingUpdate: (rating){},
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'logout.dart';
 class listview extends StatefulWidget {
   const listview({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _listviewState extends State<listview> {
     return Scaffold(
       drawer: logout(),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -24,19 +25,25 @@ class _listviewState extends State<listview> {
                 height: 20,
               ),
               TextFormField(
+                cursorColor: Colors.purple,
                 onChanged: (value) {
                   print(value);
                 },
                 decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.search),
-                  labelText: 'Search',
-                  border: OutlineInputBorder(),
-                ),
+                  prefixIcon: Icon(Icons.search,color: Colors.purple,),
+                  labelText: '57'.tr,
+                  labelStyle: new TextStyle(
+                      color: Colors.purple
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.purple),
+                  ),
+              ),
               ),
               SizedBox(
                 height: 20,
               ),
-              Text('Medical consultations',
+              Text('58'.tr,
                 style:
                 TextStyle(
                   fontSize: 20.0,
@@ -45,7 +52,7 @@ class _listviewState extends State<listview> {
               SizedBox(
                 height: 20,
               ),
-              Text('Professional consulting',
+              Text('59'.tr,
                 style:
                 TextStyle(
                   fontSize: 20.0,
@@ -54,7 +61,7 @@ class _listviewState extends State<listview> {
               SizedBox(
                 height: 20,
               ),
-              Text('Psychological consulting',
+              Text('60'.tr,
                 style:
                 TextStyle(
                   fontSize: 20.0,
@@ -63,7 +70,7 @@ class _listviewState extends State<listview> {
               SizedBox(
                 height: 20,
               ),
-              Text('Family consulting',
+              Text('61'.tr,
                 style:
                 TextStyle(
                   fontSize: 20.0,
@@ -72,7 +79,7 @@ class _listviewState extends State<listview> {
               SizedBox(
                 height: 20,
               ),
-              Text('Consult a Business / Administration',
+              Text('62'.tr ,
                 style:
                 TextStyle(
                   fontSize: 20.0,

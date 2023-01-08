@@ -62,7 +62,7 @@ class _ProfileState extends State<ExpertProfile> {
     return Scaffold(
       drawer: logout(),
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.purple,
         title: Text('41'.tr),
 
       ),
@@ -81,6 +81,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 40.0,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: expertname,
                   validator: (value){
                     if(value!.isEmpty){
@@ -89,8 +90,12 @@ class _ProfileState extends State<ExpertProfile> {
                     return null;
                   },decoration: InputDecoration(
                     labelText: '32'.tr,
-                    border: OutlineInputBorder(
-                    )
+                  labelStyle: new TextStyle(
+                      color: Colors.purple
+                  ),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.purple),
+                  ),
                 ),
 
                 ),
@@ -98,6 +103,7 @@ class _ProfileState extends State<ExpertProfile> {
                 height: 20.0,
               ),
               TextFormField(
+                cursorColor: Colors.purple,
                 controller: expertemail,
                 validator: (value){
                     if(value!.isEmpty){
@@ -107,14 +113,19 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   decoration: InputDecoration(
                       labelText: '33'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 30.0,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: expertpassword,
                   validator: (value){
                     if(value!.isEmpty){
@@ -125,8 +136,12 @@ class _ProfileState extends State<ExpertProfile> {
                   obscureText: true,
                   decoration: InputDecoration(
                       labelText: '34'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                   keyboardType: TextInputType.visiblePassword,
                 ),
@@ -135,6 +150,7 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 30.0,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: expertconfirmpassword,
                   validator: (value){
                     if(value!.isEmpty){
@@ -145,8 +161,12 @@ class _ProfileState extends State<ExpertProfile> {
                   obscureText: true,
                   decoration: InputDecoration(
                       labelText: '35'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                   keyboardType: TextInputType.visiblePassword,
                 ),
@@ -154,6 +174,7 @@ class _ProfileState extends State<ExpertProfile> {
                 SizedBox(
                   height: 24,),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: experiences,
                   validator: (value){
                     if(value!.isEmpty){
@@ -163,14 +184,19 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   decoration: InputDecoration(
                       labelText: '36'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 40.0,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: address,
                   validator: (value){
                     if(value!.isEmpty){
@@ -180,14 +206,19 @@ class _ProfileState extends State<ExpertProfile> {
                   },
                   decoration: InputDecoration(
                       labelText: '37'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 40.0,
                 ),
                 TextFormField(
+                  cursorColor: Colors.purple,
                   controller: number,
                   validator: (value){
                     if(value!.isEmpty){
@@ -198,15 +229,19 @@ class _ProfileState extends State<ExpertProfile> {
                   keyboardType: TextInputType.phone,
                   decoration: InputDecoration(
                       labelText: '38'.tr,
-                      border: OutlineInputBorder(
-                      )
+                    labelStyle: new TextStyle(
+                        color: Colors.purple
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.purple),
+                    ),
                   ),
                 ),
                 SizedBox(
                   height: 40.0,
                 ),
                 Container(
-                  color: Colors.grey,
+                  color: Colors.purple,
                   width: double.infinity,
                   height: 40.0,
                   child: PopupMenuButton(
@@ -272,7 +307,7 @@ class _ProfileState extends State<ExpertProfile> {
                 ),
                 Container(
                   width: double.infinity,
-                  color: Colors.blueAccent,
+                  color: Colors.purple,
                   child: MaterialButton(
                     onPressed: (){
                       if (formkey.currentState!.validate()){
