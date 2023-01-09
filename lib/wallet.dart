@@ -29,6 +29,7 @@ class _walletState extends State<wallet> {
       height: 40,
       ),
       TextFormField(
+        cursorColor: Colors.purple,
         validator: (value){
           if(value!.isEmpty){
             return 'Please You Must To Write To Continue  ';

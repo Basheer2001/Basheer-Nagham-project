@@ -1,7 +1,9 @@
+import 'package:dupro/exapexperts.dart';
 import 'package:dupro/listview.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'logout.dart';
+import 'exapexperts.dart';
 class choose extends StatefulWidget {
   const choose({Key? key}) : super(key: key);
 
@@ -49,6 +51,12 @@ class _chooseState extends State<choose> {
                 color: Colors.purple,
                 child: MaterialButton(
                   onPressed: (){
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (context) => example(),
+                    ),
+                    );
 
                   },
                   child: Text(

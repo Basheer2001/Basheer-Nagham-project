@@ -48,18 +48,18 @@ class _expertsState extends State<experts> {
               if (snapshot.hasData) {
 
                 return
-                Column(
-                  children:[
-                  Text(snapshot.data!.id.toString()),
-                 Text(snapshot.data!.name.toString()),
-                 Text(snapshot.data!.email.toString()),
-                 Text(snapshot.data!.image.toString()),
-                 Text(snapshot.data!.experiences.toString()),
-                 Text(snapshot.data!.address.toString()),
-                 Text(snapshot.data!.number.toString()),
-                 ],
-              );
-                
+                  Column(
+                    children:[
+                      Text(snapshot.data!.id.toString()),
+                    /*  Text(snapshot.data!.name),
+                      Text(snapshot.data!.email),
+                      Text(snapshot.data!.image),
+                      Text(snapshot.data!.experiences),
+                      Text(snapshot.data!.address),
+                      Text(snapshot.data!.number.toString()),*/
+                    ],
+                  );
+
               } else if ( snapshot.hasError) {
                 return Text('${snapshot.error}');
               }

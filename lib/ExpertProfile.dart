@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:dupro/time.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
@@ -17,6 +18,8 @@ class _ProfileState extends State<ExpertProfile> {
   PickedFile? _imageFile; // edits
   final ImagePicker _picker = ImagePicker();
   String Days = '39'.tr;
+  String con = '63'.tr;
+
   var formkey= GlobalKey<FormState>();
   var expertname=TextEditingController();
   var expertemail=TextEditingController();
@@ -306,11 +309,76 @@ class _ProfileState extends State<ExpertProfile> {
                   height: 40.0,
                 ),
                 Container(
+                  color: Colors.purple,
+                  width: double.infinity,
+                  height: 40.0,
+                  child: PopupMenuButton(
+                      child: Center(child: Text('$con',
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      ),
+                      itemBuilder:
+                          (context) {
+                        return [
+                          PopupMenuItem<int>(value: 0, child: Text('58'.tr)),
+                          PopupMenuItem<int>(value: 1, child: Text('59'.tr)),
+                          PopupMenuItem<int>(value: 2, child: Text('60'.tr)),
+                          PopupMenuItem<int>(value: 3, child: Text('61'.tr)),
+                          PopupMenuItem<int>(value: 4, child: Text('62'.tr)),
+                        ];
+                      },
+                      onSelected: (value) {
+                        if (value == 0) {
+                          setState(() {
+                            con = '58'.tr;
+                            print(con);
+                          });
+                        }
+                        if (value == 1) {
+                          setState(() {
+                            con = '59'.tr;
+                            print(con);
+                          });
+                        }
+                        if (value == 2) {
+                          setState(() {
+                            con = '60'.tr;
+                            print(con);
+                          });
+                        }
+                        if (value == 3) {
+                          setState(() {
+                            con = '61'.tr;
+                            print(con);
+                          });
+                        }
+                        if (value == 4) {
+                          setState(() {
+                            con= '61'.tr;
+                            print(con);
+                          });
+                        };
+                      }
+                  ),
+                ),
+                SizedBox(
+                  height: 40.0,
+                ),
+
+                Container(
                   width: double.infinity,
                   color: Colors.purple,
                   child: MaterialButton(
                     onPressed: (){
                       if (formkey.currentState!.validate()){
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => time(),
+                          ),
+                        );
 
                       }
                       registerexpert(expertname.text, expertemail.text,expertpassword.text,expertconfirmpassword.text,experiences.text,address.text,number.text,image!);
